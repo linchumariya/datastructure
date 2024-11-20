@@ -18,7 +18,7 @@ function replaceAlphabet(str,n){
 }
 
 
-// const input = 'Athira'
+// const input = 'Linchu'
 // const shift = 2
 console.log(replaceAlphabet('z"z',2));
 
