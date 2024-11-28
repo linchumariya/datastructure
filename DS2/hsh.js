@@ -65,7 +65,7 @@ class Hashtable{
 const table = new Hashtable(50)
 
 
-table.set("name","Athira")
+table.set("name","linchu")
 table.set("age",23)
 table.display()
 console.log(table.get("name"));

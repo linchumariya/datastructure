@@ -1,5 +1,5 @@
 const collection = new Map()
-collection.set("name","athira")
+collection.set("name","linchu")
 collection.set("Phone","7907924190")
 console.log(collection.get("name"));
 console.log(collection.get("Phone"));
