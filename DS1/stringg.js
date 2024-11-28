@@ -1,4 +1,4 @@
-// let str = 'athira'
+// let str = 'Linchu'
 // let vowels = ['a','e','i','o','u']
 // let temp = 0;
 // let res = str.split('')

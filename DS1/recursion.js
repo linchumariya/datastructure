@@ -39,7 +39,6 @@ console.log(factorial(5))
 
 
 
-
 //Question 3: Fibonacci Series
 
 // function fibonacci(n){
@@ -74,13 +73,15 @@ console.log(factorial(5))
 // console.log(power(2,3));
 
 
-//Question 5 : Reverse a string
+// Question 5 : Reverse a string
 
 // function reverseString(str){
 //    if(str==="") return "";
+//    console.log(str)
+//    console.log(str[0])
 //    return reverseString(str.substr(1))+str[0];
 // }
-// console.log(reverseString("Athira"));
+// console.log(reverseString("Linchu"));
 
 
 

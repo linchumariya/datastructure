@@ -15,6 +15,64 @@
 // }return fact
 // console.log(factorial(5))
 
+// class Node{
+//     constructor(value){
+//         this.value=value
+//         this.next=null
+//     }
+// }
+// class LinkedList{
+//     constructor(){
+//         this.head=null
+//         this.size=0
+//     }
+//     isEmpty(){
+//         return this.size===0
+//     }
+//     getsize(){
+//         return this.size
+//     }
+//     prepend(value){
+//         const node=new Node(value)
+//         if(this.isEmpty()){
+//             this.head=node
+//         }else{
+//             node.next=this.head
+//             this.next=node
+
+//         }
+//         this.size++
+//     }
+
+//     append(value){
+//         const node=new Node(value)
+//         if(this.isEmpty()){
+//             this.head=node
+//         }else{
+//             let prev=this.head
+//             while(prev.next){
+//                 prev=prev.next
+//             }
+//             prev.next=node
+
+//         }this.size++
+//     }
+// }
+// insert(value,index){
+//     const node=new Node(value)
+//     let prev=this.head
+//     for(let i=0;i<index-1;i++){
+//         prev=prev.next
+//     }
+//     // let nextt=prev.next
+//     node.next=prev.next
+//     prev.next=node
+
+
+// }
+
+
+
 class Node{
     constructor(value){
         this.value=value;

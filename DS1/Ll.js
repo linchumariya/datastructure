@@ -53,13 +53,12 @@ class LinkedList {
             const newNode = new Node(value)
             let prevNode = this.head
             for(let i=0;i<index-1 ; i++){
-                prevNode = prev.next
+                prevNode =prevNode.next
             }
-            let nextNode =prev.next
+            let nextNode =prevNode.next
             newNode.next=nextNode
             prevNode.next = newNode
             this.size++
-
         
         }
     }
