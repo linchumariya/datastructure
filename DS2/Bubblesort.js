@@ -13,7 +13,7 @@ for(let i=0;i<arr.length-1;i++){
 
 
 }}while(swapped)
-
+    return arr
 }
 const arr=[1,2,6,9,7,5,3,4]
 bubbleSort(arr)

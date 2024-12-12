@@ -67,15 +67,22 @@ class LinkedList{
     insertBefore(target,value){
         const node = new Node(value);
         let curr = this.head
-        if(curr.value===target){
-            node.next = curr
-            this.head = node
-        }else{
-            while(curr.next.value!=target){
+        let prev
+        // if(curr.value===target){
+        //     node.next = curr
+        //     this.head = node
+        // }
+        if(this.head.value===target){
+            this.prepend(value)
+        }
+        else{
+            while(curr.value!==target){
+                prev=curr
                 curr = curr.next
+
             }
-            node.next = curr.next
-            curr.next = node
+            node.next = curr
+            prev.next = node
         }
         this.size++;    
     }
@@ -158,22 +165,22 @@ list.getSize();
 list.prepend(1)
 list.prepend(2)
 list.prepend(3)
+// list.print()
+list.append(7)
+// list.append(6)
+// list.print()
+// list.insertAt(3,7)
+// list.print()
+list.insertBefore(2,0)
 list.print()
-list.append(5)
-list.append(6)
-list.print()
-list.insertAt(3,7)
-list.print()
-list.insertBefore(7,0)
-list.print()
-list.insertAfter(6,4)
-list.print()
-list.prepend(2)
-list.prepend(9)
-list.prepend(3)
-list.reverse();
-list.print()
-list.removeDup()
-list.print()
-list.midlevalue()
+// list.insertAfter(6,4)
+// list.print()
+// list.prepend(2)
+// list.prepend(9)
+// list.prepend(3)
+// list.reverse();
+// list.print()
+// list.removeDup()
+// list.print()
+// list.midlevalue()
 

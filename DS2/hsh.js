@@ -1,3 +1,4 @@
+
 class Hashtable{
     constructor(size){
         this.table = new Array(size)

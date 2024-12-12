@@ -73,91 +73,207 @@
 
 
 
+// class Node{
+//     constructor(value){
+//         this.value=value;
+//         this.next=null
+//     }
+// }
+// class Linklist{
+//     constructor(value){
+//         this.head=null;
+//         this.size=0;
+        
+//     }
+//     isEmpty(){
+//         return this.size===0
+//     }
+//     getsize(){
+//         return this.size
+//     }
+//     prepend(value){
+// const newNode=new Node(value);
+// if(this.isEmpty()){
+//     this.head=newNode
+// }else{
+//     newNode.next=this.head
+//     this.head=newNode
+
+// }this.size++
+
+//     }
+// append(value){
+//     const newNode=new Node;
+
+//     if(this.isEmpty()){
+//         this.head=newNode
+//     }else{curr=this.head
+//         while(curr.next){
+//             curr=curr.next
+//         }curr.next=newNode
+
+//     } this.size++
+   
+// }
+// insert(value,index){
+//     if(index<0||index>this.size){
+//         console.log("enter proper index");
+        
+//     }if(index===0){
+//         this.prepend(value)
+//     }else{
+//         const newNode=new Node(value)
+//         let prevNode=this.head
+//         for(let i=0;i<index-1;i++){
+//             prevNode=prevNode.next
+//         }
+//         let nextNode=prevNode.next
+//         prevNode.next=newNode
+//         newNode.next=newNode
+//         this.size++
+
+
+//     }
+// }
+
+// removeFrom(index){
+//     if(index<0||index>this.size){
+//         return null
+//     }
+//     let removeNode
+//     if(index===0){
+//         let curr =this.head;;
+//         this.head = curr.next;
+        
+//     }else{
+//         let prev=this.head
+//         for(let i=0;i<index-1;i++){
+//             prev=prev.next
+//         }
+//         removeNode=prev.next
+//         prev.next=removeNode.next
+
+
+//     }
+
+// }
+
+
+
+// }
+
+
 class Node{
     constructor(value){
-        this.value=value;
+        this.value=value
         this.next=null
     }
+   
 }
 class Linklist{
-    constructor(value){
-        this.head=null;
-        this.size=0;
-        
+    constructor(){
+        this.head=null
+        this.size=0
+
     }
-    isEmpty(){
-        return this.size===0
+    isEm(){
+        this.size===0
     }
     getsize(){
         return this.size
     }
-    prepend(value){
-const newNode=new Node(value);
-if(this.isEmpty()){
-    this.head=newNode
-}else{
-    newNode.next=this.head
-    this.head=newNode
 
-}this.size++
+    prepend(value){
+        const node=new Node(value)
+        if(this.isEm()){
+            this.head=node
+        }else{
+            node.next=this.head
+            this.head=node
+        }
+        this.size++
+    }
+    append(value){
+        const node=new Node(value)
+        if(this.isEm()){
+            this.head=node
+        }else{
+            let curr=this.head
+            while(curr.next!=null){
+                curr=curr.next
+                
+            }
+            curr.next=node
+        }
+        this.size++
+    }
+    insertAt(value,index){
+        if(index===0){
+            this.prepend(value)
+        }else if(index=this.getsize()-1){
+            this.append(value)
+        }
+        else{
+            const node=new Node(value)
+            let curr=this.head
+            for(let i=1;i<index-1;i++){
+                curr=curr.next
+            }
+            node.next=curr.next
+            curr.next=node
+        }this.size++
+
 
     }
-append(value){
-    const newNode=new Node;
-
-    if(this.isEmpty()){
-        this.head=newNode
-    }else{curr=this.head
-        while(curr.next){
-            curr=curr.next
-        }curr.next=newNode
-
-    } this.size++
-   
-}
-insert(value,index){
-    if(index<0||index>this.size){
-        console.log("enter proper index");
-        
-    }if(index===0){
-        this.prepend(value)
-    }else{
-        const newNode=new Node(value)
-        let prevNode=this.head
-        for(let i=0;i<index-1;i++){
-            prevNode=prevNode.next
+    insertBefore(target,value){
+        const node=new Node(value)
+        let curr=this.head
+        let prev
+        if(this.head.value===target){
+            this.prepend(value)
+        }else{
+            while(curr.next!==target){
+                prev=curr
+                curr=curr.next
+            }
+            node.next=curr
+            prev.next=node
         }
-        let nextNode=prevNode.next
-        prevNode.next=newNode
-        newNode.next=newNode
         this.size++
 
-
     }
-}
-
-removeFrom(index){
-    if(index<0||index>this.size){
-        return null
+insertAfter(target,value){
+    let node=new Node(value)
+    let curr=this.head
+    while(curr.value!==target){
+        curr=curr.next
     }
-    let removeNode
-    if(index===0){
-        let curr =this.head;;
-        this.head = curr.next;
-        
-    }else{
-        let prev=this.head
-        for(let i=0;i<index-1;i++){
-            prev=prev.next
-        }
-        removeNode=prev.next
-        prev.next=removeNode.next
-
-
-    }
-
+    node.next=curr.next
+    curr.next=node
+    this.size++
 }
 
 
+reverse(){
+    let prev=null
+    let curr=this.head
+    while(curr){
+        let next=curr.next
+        curr.next=prev
+        prev=curr
+        curr=next
+    }
+    this.head=prev
+}
+
+midvalue(){
+    let mid=Math.floor((this.getsize())/2)
+    let curr=this.head  
+    for(let i=0;i<mid;i++){
+        curr=curr.next
+    }
+    console.log(curr.value)
+
+}
 
 }
